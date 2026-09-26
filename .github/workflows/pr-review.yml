@@ -20,7 +20,8 @@ jobs:
 
       - name: Install Claude Code CLI
         run: |
-          curl -sSL https://storage.googleapis.com/llm-cli/install.sh | bash
+          curl -fsSL https://claude.ai/install.sh | bash
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Run claude-review on the PR diff
         id: review
